@@ -1,4 +1,6 @@
-const _ = require('lodash');
+// comando para instação do pacote: npm install lodash
+
+const _ = require('lodash'); // importar o pacote
 
 const primeiroArray = [23, 9, 4, 45];
 const segundoArray = [7, 12];
@@ -9,4 +11,4 @@ const arraysDivididos = _.chunk(primeiroArray, Math.ceil(primeiroArray.length / 
 // Concatena cada array dividido com o segundo array
 const resultado = arraysDivididos.map(array => _.concat(array, segundoArray));
 
-console.log(resultado);
+console.log(resultado);//resultado
