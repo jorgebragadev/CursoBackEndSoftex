@@ -3,13 +3,13 @@ const Excel = require('exceljs');
 
 // Carrega o arquivo Excel
 const workbook = new Excel.Workbook();
-workbook.xlsx.readFile('d:\listagem.xlsx')//Endereço do arquivo com os e-mails
+workbook.xlsx.readFile('c:/email/listagem.xlsx')//Endereço do arquivo com os e-mails
   .then(() => {
     // Use a planilha desejada
     const worksheet = workbook.getWorksheet('Plan1'); // Altere o nome da planilha conforme necessário
 
     // Loop através das linhas da planilha
-    worksheet.eachRow({ includeEmpty: true }, (row, rowNumber) => {
+    worksheet.eachRow({ includeEmpty: true }, (row) => {
       const emailCell = row.getCell('A'); // Substitua 'A' pela coluna que contém os emails
 
       if (emailCell.value) {
@@ -28,7 +28,7 @@ workbook.xlsx.readFile('d:\listagem.xlsx')//Endereço do arquivo com os e-mails
     });
 
     // Salva as alterações no arquivo Excel
-    return workbook.xlsx.writeFile('d:\listagem_com_validacao.xlsx');
+    return workbook.xlsx.writeFile('c:/email/listagem_com_validacao.xlsx');
   })
   .then(() => {
     console.log('Validação de emails concluída e arquivo salvo com sucesso!');
