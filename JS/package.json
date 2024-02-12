@@ -11,6 +11,7 @@
   "dependencies": {
     "email-validator": "^2.0.4",
     "exceljs": "^4.4.0",
+    "pdf-lib": "^1.17.1",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
